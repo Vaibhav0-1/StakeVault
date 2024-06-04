@@ -1,4 +1,5 @@
 import './App.css'
+import Navigation from './components/Navigation/Navigation'
 import  Wallet  from "./components/wallet/Wallet"
 
 function App() {
@@ -6,7 +7,9 @@ function App() {
 
   return (
     <>
-     <Wallet/>
+     <Wallet>
+      <Navigation/>
+     </Wallet>
     </>
   )
 }

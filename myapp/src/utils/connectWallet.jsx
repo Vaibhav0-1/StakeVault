@@ -15,7 +15,7 @@ export const connectWallet = async()=>{
         let chainIdHex = await window.ethereum.request({
             method:'eth_chainId'
         })
-        chainId = parseInt(chainIdHex,10)
+        chainId = parseInt(chainIdHex,16)
 
         let selectedAccount = accounts[0];
         if(!selectedAccount){
@@ -26,8 +26,8 @@ export const connectWallet = async()=>{
         provider = new ethers.BrowserProvider(window.ethereum);
         signer = await provider.getSigner();
 
-        const stakingContractAddress ="0x4e16919197ce018636a950550ff138170d2608a0"
-        const StakeTokenFContractAddress ="0x7b1fc071985a05dafd3291419128b7b72fac879a"
+        const stakingContractAddress ="0x2D56Fa2c3d390285bB8A4566CE1DF8e727B03C30"
+        const StakeTokenFContractAddress ="0x7d72d4b085874de267a1c8080eab067e031e001d"
 
         stakingContract = new Contract(stakingContractAddress, stakingAbi,signer);
 

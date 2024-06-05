@@ -1,11 +1,8 @@
-import React from 'react'
+import { useState, useEffect, useContext } from "react"
+import Web3Context from "../../context/Web3Context";
+import {ethers} from "ethers"
 
-const EarnedReward = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+const EarnedReward = () => { 
 }
 
 export default EarnedReward

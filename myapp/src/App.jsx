@@ -15,6 +15,7 @@ function App() {
       <DisplayPanel/>
       <TokenApproval/>
       <StakeAmount/>
+      <Withdraw/>
      </Wallet>
     </>
   )

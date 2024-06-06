@@ -3,6 +3,7 @@ import Navigation from './components/Navigation/Navigation'
 import  Wallet  from "./components/wallet/Wallet"
 import DisplayPanel from './components/DisplayPanel/DisplayPanel'
 import TokenApproval from './components/StakeToken/TokenApproval'
+import StakeAmount from './components/StakeToken/StakeAmount'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <Navigation/>
       <DisplayPanel/>
       <TokenApproval/>
+      <StakeAmount/>
      </Wallet>
     </>
   )

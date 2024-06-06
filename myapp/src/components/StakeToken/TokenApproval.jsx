@@ -30,7 +30,7 @@ const TokenApproval = () => {
                 setTransactionStatus("Transaction failed")
             }
         }catch(error){
-            console.loga("Token Approval Failed",error.message);
+            console.log("Token Approval Failed",error.message);
         }
     }
   return (

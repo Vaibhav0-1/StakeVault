@@ -2,6 +2,7 @@ import './App.css'
 import Navigation from './components/Navigation/Navigation'
 import  Wallet  from "./components/wallet/Wallet"
 import DisplayPanel from './components/DisplayPanel/DisplayPanel'
+import TokenApproval from './components/StakeToken/TokenApproval'
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
      <Wallet>
       <Navigation/>
       <DisplayPanel/>
+      <TokenApproval/>
      </Wallet>
     </>
   )

@@ -4,6 +4,9 @@ import  Wallet  from "./components/wallet/Wallet"
 import DisplayPanel from './components/DisplayPanel/DisplayPanel'
 import TokenApproval from './components/StakeToken/TokenApproval'
 import StakeAmount from './components/StakeToken/StakeAmount'
+import WithdrawStakeMount from './components/Withdraw/Withdraw';
+import ClaimReward from './components/ClaimReward/ClaimReward'
+import { StakingProvider } from './context/StakingContext'
 
 function App() {
 
@@ -12,11 +15,15 @@ function App() {
     <>
      <Wallet>
       <Navigation/>
+      <StakingProvider>
       <DisplayPanel/>
       <TokenApproval/>
       <StakeAmount/>
-      <Withdraw/>
+      <WithdrawStakeMount/>
+      </StakingProvider>
      </Wallet>
+     <ClaimReward/>
+     
     </>
   )
 }

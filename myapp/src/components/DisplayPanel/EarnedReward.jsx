@@ -1,9 +1,11 @@
 import { useState,useContext,useEffect } from "react";
 import {ethers} from "ethers"
 import web3Context from "../../context/Web3Context"
+
 const EarnedReward =()=>{
   const {stakingContract,selectedAccount}=useContext(web3Context);
   const [rewardVal,setRewardVal]=useState("0");
+  
 
   useEffect(()=>{
     const fetchStakeRewardInfo =async()=>{

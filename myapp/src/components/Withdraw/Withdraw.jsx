@@ -2,8 +2,11 @@ import { useState, useContext, useRef } from "react";
 import Button from "../Button/Button"
 import Web3Context from "../../context/Web3Context";
 import { ethers } from "ethers";
+import StakingContext from "../../context/StakingContext";
+
 const WithdrawStakeAmount = () => {
   const {stakingContract}= useContext(Web3Context);
+  const {isReload, setIsReload} = useContext(StakingContext);
   const withdrawStakeAmountRef = useRef();
   const [transactionStatus, setTransactionStatus] = useState("");
   const withdrawStakeToken = async(e)=>{
@@ -18,7 +21,7 @@ const WithdrawStakeAmount = () => {
     try{
       const transaction = await stakingContract.withdrawStakedTokens(amountToWithdraw );
       setTransactionStatus("Transaction is in Pending State...")
-      
+      setIsReload(!isReload);
       const receipt = await transaction.wait();
       if (receipt.status===1){
           setTransactionStatus("Transaction is Successful");
@@ -46,4 +49,4 @@ const WithdrawStakeAmount = () => {
   )
 }
 
-export default StakeAmount
+export default WithdrawStakeAmount

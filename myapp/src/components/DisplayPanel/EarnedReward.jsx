@@ -1,11 +1,11 @@
 import { useState,useContext,useEffect } from "react";
 import {ethers} from "ethers"
 import web3Context from "../../context/Web3Context"
-
+import { toast } from "react-hot-toast";
+import "./DisplayPanel.css";
 const EarnedReward =()=>{
   const {stakingContract,selectedAccount}=useContext(web3Context);
   const [rewardVal,setRewardVal]=useState("0");
-  
 
   useEffect(()=>{
     const fetchStakeRewardInfo =async()=>{
@@ -28,7 +28,8 @@ const EarnedReward =()=>{
 
   return(
     <div className="earned-reward">
-      <p>Earned Reward: {rewardVal} </p>
+      <p>Earned Reward:</p>
+      <span>{rewardVal}</span>
   </div>
   )
 }

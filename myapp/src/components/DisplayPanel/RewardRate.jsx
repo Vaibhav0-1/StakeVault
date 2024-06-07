@@ -1,29 +1,31 @@
-import { useState, useEffect, useContext } from "react"
+import { useState,useEffect,useContext } from "react";
 import Web3Context from "../../context/Web3Context";
 import {ethers} from "ethers"
-
-const RewardRate = () => {
-  const {stakingContract, selectedAccount} = useContext(Web3Context);
-  const [rewardRate,setRewardRate]= useState("0");
+import { toast } from "react-hot-toast";
+import "./DisplayPanel.css";
+const RewardRate = ()=>{
+  const {stakingContract,selectedAccount}=useContext(Web3Context);
+  const [rewardRate,setRewardRate]=useState("0");
 
   useEffect(()=>{
     const fetchRewardRate = async()=>{
-      try{
-        const rewardRateWei = await stakingContract.REWARD_RATE(); 
-        const rewardRateEth = ethers.formatUnits(rewardRateWei.toString(),18);
-        console.log(rewardRate);
-        setRewardRate(rewardRateEth);
-      }catch(error){
-        console.error("Error fetching data:",error.message);
-      }
+       try{
+          const rewardRateWei = await stakingContract.REWARD_RATE();
+          const rewardRateEth = ethers.formatUnits(rewardRateWei.toString(),18);
+          setRewardRate(rewardRateEth)
+        }catch(error){
+          toast.error("Error fetching reward rate");
+          console.error(error.message)
+       }
     }
     stakingContract && fetchRewardRate()
   },[stakingContract,selectedAccount])
-  return (
-    <div>
-      <p>Reward Rate: {rewardRate} token/sec </p>
-    </div>
+
+  return(
+    <div className="reward-rate">
+      <p>Reward Rate:</p>
+      <span>{rewardRate} token/sec </span>
+  </div>
   )
 }
-
-export default RewardRate
+export default RewardRate;

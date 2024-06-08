@@ -43,7 +43,7 @@ const StakeAmount =()=>{
   };
     return (
       <form onSubmit={stakeToken} className="stake-amount-form">
-        <label className="stake-input-label">Enter Staked Amount:</label>
+        <label className="stake-input-label">Enter Stake Amount:</label>
         <input type="text" ref={stakeAmountRef} />
         <Button onClick={stakeToken} type="submit" label="Stake Token" />
       </form>

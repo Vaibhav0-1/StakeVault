@@ -1,20 +1,22 @@
-import ConnectedAccount from "./ConnectedAccount";
-import ConnectedNetwork from "./ConnectedNetwork";
-import ClaimReward from "../ClaimReward/ClaimReward";
-import "./Navigation.css"
+import React from 'react';
+import ClaimReward from '../ClaimReward/ClaimReward';
+import ConnectedAccount from './ConnectedAccount';
+import ConnectedNetwork from './ConnectedNetwork';
+import './Navigation.css'; // Import your CSS file for styling
 
 const Navigation = () => {
   return (
-<header className="navbar">
-    <div className="navbar-btns">
-      <ClaimReward />
-    </div>
-    <div className="navbar-acc">
-      <ConnectedAccount />
-      <ConnectedNetwork />
-    </div>
-  </header>
-  )
+    <header className="navbar">
+      <h1 className="navbar-title">Stake Vault</h1>
+      <div className="navbar-acc">
+        <ConnectedAccount />
+        <ConnectedNetwork />
+      </div>
+      <div className="navbar-btns">
+        <ClaimReward />
+      </div>
+    </header>
+  );
 }
 
-export default Navigation
+export default Navigation;

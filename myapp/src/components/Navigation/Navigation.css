@@ -39,12 +39,27 @@
 
 .connected-ac, .network {
   background-color: var(--primary-color);
-  padding: 8px 12px;
+  padding: 8px 16px;
   border-radius: 8px;
   font-size: 12px;
   color: white;
   text-transform: uppercase; /* Uppercase text */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.connected-ac:hover, .network:hover {
+  background-color: #0080ff; /* Darker shade of primary color on hover */
+  transform: translateY(-2px); /* Lift the button slightly on hover */
+}
+
+/* Gradient effect */
+.connected-ac {
+  background: linear-gradient(135deg, #00bfff, #0068c0);
+}
+
+.network {
+  background: linear-gradient(135deg, #00bfff, #005aa7);
 }
 
 /* Adjust font size and padding for smaller screens */
@@ -63,16 +78,6 @@
   background-color: var(--primary-color);
   color: white;
   cursor: pointer;
-}
-
-/* Connected account and network styles */
-.connected-ac, .network {
-  font-size: 12px;
-  padding: 8px 12px;
-  border-radius: 8px;
-  background-color: var(--primary-color);
-  color: white;
-  text-transform: uppercase;
 }
 
 /* Lower block styles */

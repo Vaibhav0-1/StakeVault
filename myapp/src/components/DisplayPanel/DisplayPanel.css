@@ -1,46 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400;500;900&display=swap");
+
+:root {
+  font-family: "Lexend", sans-serif;
+  --primary-color: #00bfff; /* Sky blue */
+  --bg-color: #f2f2f2;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.top-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items to the start */
+  background-color: var(--bg-color);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  margin-bottom: 20px; /* Add margin to create gap */
+}
+
+.staked-amount, .reward-rate, .earned-reward {
+  flex: 1; /* Each block takes equal space */
+  min-width: 200px; /* Minimum width */
+  max-width: 30%; /* Maximum width */
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.staked-amount:hover, .reward-rate:hover, .earned-reward:hover {
+  background-color: var(--primary-color); /* Change background color on hover */
+  color: white; /* Change text color on hover */
+}
+
 .staked-amount {
-    width: 500px;
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 24px;
-    padding-left: 28px;
-    padding-right: 28px;
-    border-top-right-radius: 12px;
-    border-top-left-radius: 12px;
-  }
-  .reward-rate {
-    width: 500px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    padding-left: 28px;
-    padding-right: 28px;
-    background-color: white;
-  }
-  .earned-reward {
-    width: 500px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 24px;
-    padding-left: 28px;
-    padding-right: 28px;
-    border-bottom-right-radius: 12px;
-    border-bottom-left-radius: 12px;
-    background-color: white;
-  }
-  
-  .top-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--bg-color);
-    border-radius: 24px;
-    padding-top: 18px;
-  }
-  
+  margin-right: 20px; /* Margin between blocks */
+}
+
+.reward-rate {
+  margin: 0 20px; /* Margin between blocks */
+}
+
+.earned-reward {
+  margin-left: 20px; /* Margin between blocks */
+}
